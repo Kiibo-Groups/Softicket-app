@@ -1,0 +1,193 @@
+ion-content {
+    --padding-bottom:80px;
+  
+    .rocket {
+        margin: 10px;
+        height: 40px;
+
+        --padding-start: 10px;
+        --padding-end: 10px;
+        --border-radius: 20px;
+        --color: #000;
+        font-size: 15px;
+        font-weight: 800;
+
+        img {
+            width: 30px;
+            transform: rotate(-114.084deg);
+        }
+
+        span {
+            font-weight: 700;
+            text-transform: capitalize;
+            padding-left: 10px;
+        }
+    }
+  
+    
+    .rectangle-home {
+      position: absolute;
+      right: -70px;
+    }
+
+    .tu_qr {
+        position: absolute;
+        right: 0;
+        top: 0;
+        margin: 35px 10px;
+
+        --padding-start:10px;
+        --padding-end:10px;
+        --border-radius: 20px;
+        --color:#fff;
+        font-size: 15px;
+        font-weight: 600;
+    }
+  
+    section.wrap_header { 
+      margin-top: 100px;
+   
+      ion-item {
+        --background: transparent;
+  
+        ion-card {
+          box-shadow: none;
+          margin: auto;
+          background: transparent;
+        
+          ion-card-content {
+            position: relative;
+  
+            h3 {
+              font-size: 14px;
+              font-weight: 600;
+              line-height: 21.78px;
+              text-align: left;
+              color: #000;
+  
+  
+              &::before {
+                content: "@";
+              }
+            }
+  
+            span {
+              font-size: 14px;
+              font-weight: 400;
+              line-height: 16.94px;
+              text-align: left;
+              color: #B4B4B4;
+            }
+  
+            ion-icon {
+              font-size: 44px;
+              position: absolute;
+              bottom: 20px;
+              right: -5px;
+            }
+  
+          }
+        }
+  
+        ion-button {
+          --padding-start:10px;
+          --padding-end:10px;
+          --border-radius: 20px;
+          --color:#fff;
+          font-size: 15px;
+          font-weight: 600;
+        }
+      }
+    }
+
+    section.divisor {
+        text-align: center;
+        margin-top: 25px;
+
+        span {
+            position: relative;
+            color: #e39090;
+            text-align: center;
+            
+            &::after {
+                position: absolute;
+                content: "";
+                top: 10px;
+                right: 30px;
+                width: 150px;
+                height: 1px;
+                background-color: #e39090;
+            }
+
+            &::before {
+                position: absolute;
+                content: "";
+                top: 10px;
+                left: 30px;
+                width: 150px;
+                height: 1px;
+                background-color: #e39090;
+            }
+        }
+    }
+
+    section.wrap_form { 
+        
+
+        .white_div {
+            background: white;
+            padding: 16px;
+            border-top-left-radius: 25px;
+            border-top-right-radius: 25px;
+           
+
+            .title_lbl {
+                font-family: 'semi-bold';
+                display: block;
+                margin-bottom: 10px;
+            }
+
+            .detail_div {
+                display: flex;
+                align-items: center;
+                position: relative;
+                margin-bottom: 16px;
+
+                 
+                .light_box {
+                    height: 40px;
+                    width: 40px;
+                    border-radius: 5px;
+                    position: relative;
+                    margin-right: 10px;
+
+                    ion-icon {
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        font-size: 10px;
+                        transform: translate(-50%,-50%);
+                    }
+                }
+
+                ion-input {
+                    max-width: 70%;
+                }
+
+                .abs_lbl {
+                    position: absolute;
+                    right: 0;
+                    color: rgb(27, 27, 27);
+                    font-weight: 700;
+                    font-size: 14px;
+                }
+                .change_lbl {
+                    position: absolute;
+                    right: 0;
+                    color: var(--ion-color-primary);
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+}

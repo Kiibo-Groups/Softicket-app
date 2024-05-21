@@ -1,0 +1,41 @@
+<ion-content [fullscreen]="true">
+
+  
+  <img src="assets/rectangle-home.png" alt="shape" class="rectangle-home">
+
+
+  <ion-button (click)="GotoHome()" class="rocket animate__animated animate__backInLeft">
+    <img src="assets/rocket.png" alt="rocket">
+    <span>Inicio</span>
+  </ion-button>
+   
+
+  <section class="wrap_header">
+    <ion-item lines="none" style="--padding-start: 0 !important;--padding-end: 0;">
+      <ion-card>
+        <ion-card-content class="ion-text-center">
+          <img src="assets/qr_code.png" alt="">
+        </ion-card-content>
+      </ion-card>
+    </ion-item>
+
+ 
+    <ion-item lines="none" style="margin-top: 25px;--padding-start: 0 !important;--padding-end: 0;">
+      <ion-card>
+        <ion-card-content class="ion-text-center">
+          <img src="assets/btn_ok.png" alt="">
+          <!-- <img src="assets/btn_error.png" alt=""> -->
+        </ion-card-content>
+
+        <ion-button>
+          <ion-icon name="qr-code-outline"></ion-icon>
+          &nbsp; TU QR
+        </ion-button>
+      </ion-card>
+    </ion-item>
+  </section>
+ 
+</ion-content>
+
+
+<app-tabs-nav pageInit="qrcode"></app-tabs-nav>

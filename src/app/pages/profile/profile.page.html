@@ -1,0 +1,80 @@
+<ion-content [fullscreen]="true">
+
+  
+  <img src="assets/rectangle-home.png" alt="shape" class="rectangle-home">
+
+
+  <ion-button (click)="GotoHome()" class="rocket animate__animated animate__backInLeft">
+    <img src="assets/rocket.png" alt="rocket">
+    <span>Inicio</span>
+  </ion-button>
+  
+  <ion-button (click)="GotoQRCode()" color="secondary" class="tu_qr">
+    <ion-icon name="qr-code-outline"></ion-icon>
+    &nbsp; TU QR
+  </ion-button>
+
+  <section class="wrap_header">
+    <ion-item lines="none" style="--padding-start: 0 !important;--padding-end: 0;">
+      <ion-card>
+        <ion-card-content class="ion-text-center">
+          <img src="assets/user_demo.png" alt="">
+          <h3>Proyectistama</h3>
+          <span>+8136450015</span>
+
+          <ion-icon src="assets/edit.svg"></ion-icon>
+        </ion-card-content>
+      </ion-card>
+    </ion-item>
+  </section>
+
+  <section class="divisor">
+    <span>OR</span>
+  </section>
+  <section class="wrap_form">
+
+    <div class="white_div">
+      <div class="detail_div">
+          <div class="light_box">
+              <ion-icon src="assets/point_orange.svg"></ion-icon>
+          </div>
+          <ion-input type="text" placeholder="Nombre y apellidos"></ion-input> 
+      </div>
+
+      <div class="detail_div">
+        <div class="light_box"> 
+          <ion-icon src="assets/point_orange.svg"></ion-icon>
+        </div>
+        <ion-select interface="notifications"  value="1" mode="ios" placeholder="Sexo">
+            <ion-select-option value="1">Femenino</ion-select-option>
+            <ion-select-option value="2">Masculino</ion-select-option>
+            <ion-select-option value="3">Otro</ion-select-option>
+        </ion-select> 
+    </div>
+ 
+    <div class="detail_div">
+      <div class="light_box">
+        <ion-icon src="assets/point_orange.svg"></ion-icon>
+      </div>
+      <ion-input type="text" placeholder="Edad"></ion-input> 
+    </div>
+
+    <div class="detail_div">
+      <div class="light_box">
+          <ion-icon src="assets/point_orange.svg"></ion-icon>
+      </div>
+      <ion-button style="--border-radius: 20px;--background: #E77E42;font-size: 14px;font-style: normal;font-weight: 400;line-height: 24px;color: #fff;text-transform: capitalize;">
+        <ion-icon src="assets/qrcode.svg"></ion-icon>
+        &nbsp;
+        Cerrar sesión
+      </ion-button>
+    </div>
+
+
+  </div>
+  </section>
+
+</ion-content>
+
+
+<app-tabs-nav pageInit="profile"></app-tabs-nav>

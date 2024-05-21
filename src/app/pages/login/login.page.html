@@ -1,0 +1,50 @@
+<ion-content [fullscreen]="true">
+
+  <section class="wrap_log">
+    <img src="assets/logo.png" alt="">
+
+    <h1>SOFTICKET</h1>
+  </section>
+
+  <!-- <section class="wrap_btns">
+    <ion-button color="primary">Inicia sesión</ion-button>
+  </section> -->
+
+  <section class="wrap_inputs">
+    <form #form="ngForm" (ngSubmit)="loginDat(form.value)">
+      <ion-list lines="none">
+        <ion-item>
+          <ion-icon src="assets/email_input.svg"></ion-icon> 
+          <ion-input mode="ios" clearInput name="email" ngModel type="mail" placeholder="Email ID"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-icon src="assets/password_input.svg"></ion-icon>
+          <ion-input mode="ios" type="password" autocomplete="off" name="password" ngModel clearInput placeholder="Password" required (keyup.enter)="loginDat(form.value)" ></ion-input>
+        </ion-item>  
+      </ion-list>
+
+      <ion-list>
+        <section>
+          <ion-button color="primary" type="submit">Inicia sesión</ion-button>
+        </section>
+      </ion-list>
+    </form>
+  </section>
+
+  <section class="wrap_or_logs">
+    <div>
+      <span>OR</span>
+    </div>
+
+
+    <div class="btns_socials">
+      <img src="assets/fb_log.png" alt="facebook">
+      <img src="assets/google_log.png" alt="google">
+    </div>
+
+
+    <p>¿Todavía no estas registrado? <span>Crea una cuenta</span></p>
+  </section>
+
+</ion-content>
