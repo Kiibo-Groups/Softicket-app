@@ -1,0 +1,56 @@
+
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-button (click)="goToHome()" class="rocket animate__animated animate__backInLeft">
+      <ion-icon name="chevron-back-outline"></ion-icon>
+      <span>Atras</span>
+    </ion-button>
+    
+    <ion-buttons slot="end">
+      <ion-item>
+        <ion-avatar aria-hidden="true" slot="start">
+          <img alt="profile" src="assets/user_demo.png" />
+        </ion-avatar>
+      </ion-item>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  
+  <section class="wrap_datatimer ion-text-center">
+    <img src="assets/garantias.png">
+    <h3>Garantias</h3> 
+  </section>
+
+  <section class="wrap_list">
+    <ion-list *ngIf="Products && Products.length > 0">
+      <ion-item *ngFor="let prod of Products"  [button]="true" detail="false">
+        <div class="unread-indicator-wrapper" slot="start">
+          <img src="{{ prod.asset_url }}/{{prod.product.image}}" alt="">
+        </div>
+        <ion-label>
+          <strong>{{ prod.warranty }}</strong>
+          <ion-note color="medium" class="ion-text-wrap">
+            {{ prod.product.name | slice:0:25 }} ...
+          </ion-note>
+        </ion-label>
+        
+        <!-- 
+        <div class="metadata-end-wrapper" slot="end">
+          <ion-icon name="ellipsis-horizontal-outline"></ion-icon>
+        </div> -->
+      </ion-item> 
+    </ion-list>
+
+
+    <ion-list *ngIf="!Products || Products.length == 0">
+      <section class="ion-text-center">
+        <img src="assets/404.svg" alt="">
+        <span>Sin elementos encontrados</span>
+      </section>
+    </ion-list>
+  </section>
+
+</ion-content>

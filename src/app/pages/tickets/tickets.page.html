@@ -1,0 +1,54 @@
+
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-button (click)="goToHome()" class="rocket animate__animated animate__backInLeft">
+      <ion-icon name="chevron-back-outline"></ion-icon>
+      <span>Atras</span>
+    </ion-button>
+    
+    <ion-buttons slot="end">
+      <ion-item>
+        <ion-avatar aria-hidden="true" slot="start">
+          <img alt="profile" src="assets/user_demo.png" />
+        </ion-avatar>
+      </ion-item>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  
+  <section class="wrap_datatimer ion-text-center">
+    <h3>Tickets</h3> 
+  </section>
+
+  <section class="wrap_list">
+    <ion-list *ngIf="Bills">
+      <ion-item [button]="true" detail="false" *ngFor="let bill of Bills">
+        <div class="unread-indicator-wrapper" slot="start">
+          <img src="{{ bill.asset_url }}/{{ bill.store.logo }}" alt="">
+        </div>
+        <ion-label>
+          <strong>{{ bill.total | currency }}</strong>
+          <ion-note color="medium" class="ion-text-wrap">
+            {{ bill.store.name }}
+          </ion-note>
+        </ion-label>
+
+        <div class="metadata-end-wrapper" slot="end">
+          <ion-icon name="ellipsis-horizontal-outline" (click)="presentActionSheet(bill)"></ion-icon>
+        </div>
+      </ion-item> 
+    </ion-list>
+
+    <ion-list *ngIf="Bills && Bills.length == 0">
+      <section class="ion-text-center">
+        <img src="assets/404.svg" alt="">
+
+        <span>Sin elementos encontrados</span>
+      </section>
+    </ion-list>
+  </section>
+
+</ion-content>

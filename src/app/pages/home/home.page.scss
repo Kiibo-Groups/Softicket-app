@@ -1,0 +1,43 @@
+ion-content {
+  --padding-bottom:80px;
+
+  .rocket {
+    position: absolute;
+    top: 0;
+    left: 15px;
+    z-index: 2003;
+  }
+
+  
+  .rectangle-home {
+    position: absolute;
+    right: -70px;
+  }
+
+  
+  section.wrap_menu {
+    text-align: center;
+    margin-top: 70px;
+
+    ion-grid {
+
+      ion-row {
+
+        ion-col {
+
+          div.menu_wrap_div {
+            
+            padding: 10px;
+            border-radius: 20px;
+            background: #EEEDFF;
+
+            img {
+              width: 98px; 
+            }
+          }
+        }
+      }
+    }
+  }
+}
+

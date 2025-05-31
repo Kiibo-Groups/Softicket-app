@@ -1,0 +1,64 @@
+<ion-content [fullscreen]="true">
+
+  <img src="assets/rocket.png" alt="rocket" class="rocket">
+  <img src="assets/rectangle-home.png" alt="shape" class="rectangle-home">
+
+  <!-- WrapHeader -->
+  <app-wrap-header pageInit="home"></app-wrap-header>
+  <!-- WrapHeader -->
+
+
+  <section class="wrap_menu">
+    <h3>TU MENU 🤩</h3>
+
+    <ion-grid>
+      <ion-row>
+
+        <ion-col (click)="GotoBills()">
+          <div class="menu_wrap_div">
+            <img src="assets/facturas.png">
+            <h4>FACTURAS</h4>
+          </div>
+        </ion-col>
+
+        <ion-col (click)="GotoPromotions()">
+          <div class="menu_wrap_div">
+            <img src="assets/promociones.png">
+            <h4>PROMOCIONES</h4>
+          </div>
+        </ion-col>
+
+        <ion-col (click)="GotoTickets()">
+          <div class="menu_wrap_div">
+            <img src="assets/tickets.png">
+            <h4>TICKETS</h4>
+          </div>
+        </ion-col>
+
+        <!--
+        <ion-col>
+          <div class="menu_wrap_div">
+            <img src="assets/favoritos.png">
+            <h4>FAVORITOS</h4>
+          </div>
+        </ion-col>
+        -->
+        
+        <ion-col (click)="GotoGaranties()">
+          <div class="menu_wrap_div">
+            <img src="assets/garantias.png">
+            <h4>GARANTIAS</h4>
+          </div>
+        </ion-col>
+
+      </ion-row>
+    </ion-grid>
+
+  </section>
+
+
+</ion-content>
+
+<ion-footer>
+  <app-tabs-nav pageInit="home"></app-tabs-nav>
+</ion-footer>

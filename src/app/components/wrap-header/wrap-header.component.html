@@ -1,0 +1,27 @@
+<section class="wrap_header">
+  <ion-item lines="none" (click)="GotoProfile()" [ngStyle]="PageInit == 'profile' ? {'margin':'auto'} : {}">
+    <ion-card>
+      <ion-card-content class="ion-text-center">
+        <img src="assets/user_demo.png" alt="">
+        <ion-skeleton-text *ngIf="!userDat" [animated]="true" style="width: 100%;margin:auto;"></ion-skeleton-text>
+        <ion-skeleton-text *ngIf="!userDat" [animated]="true" style="width: 50%;margin:5px auto;"></ion-skeleton-text>
+
+        <h3 *ngIf="userDat">{{ userDat.username }}</h3>
+        <span *ngIf="userDat">{{ userDat.whatsapp_1 }}</span>
+      </ion-card-content>
+    </ion-card>
+  </ion-item>
+
+
+  <ion-item lines="none" *ngIf="PageInit == 'home'" >
+    <ion-button (click)="GotoQRCode()" color="secondary">
+      <ion-icon name="qr-code-outline"></ion-icon>
+      &nbsp; TU QR
+    </ion-button>
+  </ion-item>
+</section>
+ 
+
+<section class="wrap_code_qr" *ngIf="PageInit == 'home'" (click)="GotoQRCode()">
+  <img src="assets/qr-code.png" alt="qr-code">
+</section>

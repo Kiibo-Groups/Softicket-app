@@ -7,6 +7,13 @@ const config: CapacitorConfig = {
   server: {
     androidScheme: 'https'
   }
-};
+,
+    android: {
+       buildOptions: {
+          keystorePath: 'e:\Proyectos\Softicket-app\Firmakey.jks',
+          keystoreAlias: 'softicket',
+       }
+    }
+  };
 
 export default config;

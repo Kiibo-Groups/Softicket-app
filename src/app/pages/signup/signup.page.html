@@ -1,0 +1,139 @@
+<ion-content [fullscreen]="true">
+
+  <section class="wrap_log">
+    <img src="assets/logo.png" alt="">
+    <h2>Crea tu cuenta</h2>
+  </section>
+
+  <section class="wrap_inputs">
+    <form [formGroup]="authForm" (keyup.enter)="loginDat()">
+      <ion-list lines="none">
+        <!-- Nombre -->
+        <ion-item>
+          <ion-icon src="assets/person_input.svg"></ion-icon>
+          <ion-input mode="ios" clearInput name="name" formControlName="name" type="text" autocomplete="off"
+            placeholder="Nombre/Razón Social"></ion-input>
+        </ion-item>
+        <ng-container *ngFor="let error of error_messages.name">
+          <div class="error-message"
+            *ngIf="authForm.get('name')?.hasError(error.type) && (authForm.get('name')?.dirty || authForm.get('name')?.touched)">
+            {{error.message}}
+          </div>
+        </ng-container>
+        <!-- Nombre -->
+
+        <!-- Email -->
+        <ion-item>
+          <ion-icon src="assets/mail_input.svg"></ion-icon>
+          <ion-input mode="ios" clearInput name="email" formControlName="email" type="mail" autocomplete="off"
+            placeholder="Email ID"></ion-input>
+        </ion-item>
+        <ng-container *ngFor="let error of error_messages.email">
+          <div class="error-message"
+            *ngIf="authForm.get('email')?.hasError(error.type) && (authForm.get('email')?.dirty || authForm.get('email')?.touched)">
+            {{error.message}}
+          </div>
+        </ng-container>
+        <!-- Email -->
+
+        <!-- Telfono -->
+        <ion-item>
+          <ion-icon src="assets/phone_input.svg"></ion-icon>
+          <ion-input mode="ios" clearInput name="phone" formControlName="phone" type="tel" autocomplete="off"
+            placeholder="+521657123456"></ion-input>
+        </ion-item>
+        <ng-container *ngFor="let error of error_messages.phone">
+          <div class="error-message"
+            *ngIf="authForm.get('phone')?.hasError(error.type) && (authForm.get('phone')?.dirty || authForm.get('phone')?.touched)">
+            {{error.message}}
+          </div>
+        </ng-container>
+        <!-- Telfono -->
+
+        <!-- Password -->
+        <ion-item>
+          <ion-icon src="assets/lock_input.svg"></ion-icon>
+          <ion-input mode="ios" type="password" autocomplete="off" name="password" formControlName="password" autocomplete="off" clearInput
+            placeholder="Password" required></ion-input>
+        </ion-item>
+        <ng-container *ngFor="let error of error_messages.password">
+          <div class="error-message"
+            *ngIf="authForm.get('password')?.hasError(error.type) && (authForm.get('password')?.dirty || authForm.get('password')?.touched)">
+            {{error.message}}
+          </div>
+        </ng-container>
+        <!-- Password -->
+
+        <!-- RFC -->
+        <ion-item>
+          <ion-icon src="assets/finger_input.svg"></ion-icon>
+          <ion-input mode="ios" clearInput name="rfc" formControlName="rfc" type="tel" autocomplete="off"
+            placeholder="Ingrese su RFC"></ion-input>
+        </ion-item>
+        <ng-container *ngFor="let error of error_messages.rfc">
+          <div class="error-message"
+            *ngIf="authForm.get('rfc')?.hasError(error.type) && (authForm.get('rfc')?.dirty || authForm.get('rfc')?.touched)">
+            {{error.message}}
+          </div>
+        </ng-container>
+        <!-- RFC -->
+
+        <!-- ZIP -->
+        <ion-item>
+          <ion-icon src="assets/location_input.svg"></ion-icon>
+          <ion-input mode="ios" clearInput name="zip" formControlName="zip" type="text" autocomplete="off"
+            placeholder="Ingrese su Código postal"></ion-input>
+        </ion-item>
+        <ng-container *ngFor="let error of error_messages.zip">
+          <div class="error-message"
+            *ngIf="authForm.get('zip')?.hasError(error.type) && (authForm.get('zip')?.dirty || authForm.get('zip')?.touched)">
+            {{error.message}}
+          </div>
+        </ng-container>
+        <!-- ZIP -->
+
+        <!-- Regimen Fiscal -->
+        <ion-item>
+          <ion-icon src="assets/reader_input.svg"></ion-icon>
+          <ion-select class="form-select" name="FiscalRegime" formControlName="FiscalRegime" required="">
+            <ion-select-option value="">Selecciona el Régimen fiscal</ion-select-option>
+            <ion-select-option value="601">601 - General de Ley Personas Morales</ion-select-option>
+            <ion-select-option value="603">603 - Personas Morales con Fines no Lucrativos</ion-select-option>
+            <ion-select-option value="605">605 - Sueldos y Salarios e Ingresos Asimilados a Salarios</ion-select-option>
+            <ion-select-option value="606">606 - Arrendamiento</ion-select-option>
+            <ion-select-option value="607">607 - Régimen de Enajenación o Adquisición de Bienes</ion-select-option>
+            <ion-select-option value="608">608 - Demás ingresos</ion-select-option>
+            <ion-select-option value="610">610 - Residentes en el Extranjero sin Establecimiento Permanente en
+              México</ion-select-option>
+            <ion-select-option value="611">611 - Ingresos por Dividendos (socios y accionistas)</ion-select-option>
+            <ion-select-option value="612">612 - Personas Físicas con Actividades Empresariales y
+              Profesionales</ion-select-option>
+            <ion-select-option value="614">614 - Ingresos por intereses</ion-select-option>
+            <ion-select-option value="615">615 - Régimen de los ingresos por obtención de premios</ion-select-option>
+            <ion-select-option value="616">616 - Sin obligaciones fiscales</ion-select-option>
+            <ion-select-option value="621">621 - Incorporación Fiscal</ion-select-option>
+            <ion-select-option value="625">625 - Régimen de las Actividades Empresariales con ingresos a través de
+              Plataformas Tecnológicas</ion-select-option>
+            <ion-select-option value="626">626 - Régimen Simplificado de Confianza</ion-select-option>
+            <ion-select-option value="628">628 - Hidrocarburos</ion-select-option>
+            <ion-select-option value="629">629 - De los Regímenes Fiscales Preferentes y de las Empresas
+              Multinacionales</ion-select-option>
+            <ion-select-option value="630">630 - Enajenación de acciones en bolsa de valores</ion-select-option>
+          </ion-select>
+        </ion-item>
+
+      </ion-list>
+
+      <ion-list>
+        <section>
+          <ion-button color="primary" type="submit" (click)="loginDat()">Crear cuenta</ion-button>
+        </section>
+      </ion-list>
+    </form>
+  </section>
+
+  <section class="wrap_or_logs">
+    <p (click)="goToLogin()">¿Ya tienes cuenta? <span>Inicia sesión</span></p>
+  </section>
+
+</ion-content>

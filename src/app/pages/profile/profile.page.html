@@ -1,0 +1,237 @@
+<ion-content [fullscreen]="true">
+
+
+  <img src="assets/rectangle-home.png" alt="shape" class="rectangle-home">
+
+
+  <ion-button (click)="GotoHome()" class="rocket animate__animated animate__backInLeft">
+    <img src="assets/rocket.png" alt="rocket">
+    <span>Inicio</span>
+  </ion-button>
+
+
+  <!-- WrapHeader -->
+  <app-wrap-header pageInit="profile"></app-wrap-header>
+  <!-- WrapHeader -->
+
+  <section class="divisor">
+    <span>
+      <ion-icon name="information-circle-outline"></ion-icon>
+    </span>
+  </section>
+
+  <section class="wrap_form" *ngIf="userDat">
+
+    <ion-list lines="none" class="ion-list-light">
+
+      <!-- Nombre Completo -->
+      <div class="detail_div">
+        <div class="light_box">
+          <ion-icon src="assets/point_orange.svg"></ion-icon>
+        </div>
+        <div class="inner_wrap">
+          <ion-item lines="none">
+            <ion-label (click)="name_view = true">
+              Nombre completo<br />
+              <small *ngIf="userDat.name" style="text-transform:capitalize;">{{ userDat.name }}</small>
+              <small *ngIf="!userDat.name">Ingresa tu nombre completo</small>
+            </ion-label>
+            <ion-icon *ngIf="userDat.name" slot="end" src="assets/success_icon.svg" class="check"></ion-icon>
+            <ion-icon *ngIf="userDat.name == null" slot="end" src="assets/pencil_icon.svg" class="falt"
+              (click)="name_view = true"></ion-icon>
+          </ion-item>
+
+          <ion-item linea="none" *ngIf="name_view">
+            <ion-input type="text" placeholder="Ingresa tu nombre completo" clearInput="true" [(ngModel)]="userDat.name"
+              style="text-transform:capitalize;"></ion-input>
+            <ion-icon slot="end" name="send-outline" class="check" (click)="saveInfo() ; name_view = false"></ion-icon>
+          </ion-item>
+        </div>
+      </div>
+      <!-- Nombre Completo -->
+
+      <!-- Email -->
+      <div class="detail_div">
+        <div class="light_box">
+          <ion-icon src="assets/point_orange.svg"></ion-icon>
+        </div>
+        <div class="inner_wrap">
+          <ion-item lines="none">
+            <ion-label (click)="email_view = true">
+              Correo electronico<br />
+              <small *ngIf="userDat.email" style="text-transform:capitalize;">{{ userDat.email }}</small>
+              <small *ngIf="!userDat.email">Ingresa tu correo electrónico</small>
+            </ion-label>
+            <ion-icon *ngIf="userDat.email" slot="end" src="assets/success_icon.svg" class="check"></ion-icon>
+            <ion-icon *ngIf="userDat.email == null" slot="end" src="assets/pencil_icon.svg" class="falt"
+              (click)="email_view = true"></ion-icon>
+          </ion-item>
+
+          <ion-item linea="none" *ngIf="email_view">
+            <ion-input type="text" placeholder="Ingresa tu correo electrónico" clearInput="true"
+              [(ngModel)]="userDat.email" style="text-transform:capitalize;"></ion-input>
+            <ion-icon slot="end" name="send-outline" class="check" (click)="saveInfo() ; email_view = false"></ion-icon>
+          </ion-item>
+        </div>
+      </div>
+      <!-- Email -->
+
+      <!-- Telefono -->
+      <div class="detail_div">
+        <div class="light_box">
+          <ion-icon src="assets/point_orange.svg"></ion-icon>
+        </div>
+        <div class="inner_wrap">
+          <ion-item lines="none">
+            <ion-label (click)="phone_view = true">
+              Número Telefónico<br />
+              <small *ngIf="userDat.whatsapp_1" style="text-transform:capitalize;">{{ userDat.whatsapp_1 }}</small>
+              <small *ngIf="!userDat.whatsapp_1">Ingresa tu número telefónico</small>
+            </ion-label>
+            <ion-icon *ngIf="userDat.whatsapp_1" slot="end" src="assets/success_icon.svg" class="check"></ion-icon>
+            <ion-icon *ngIf="userDat.whatsapp_1 == null" slot="end" src="assets/pencil_icon.svg" class="falt"
+              (click)="phone_view = true"></ion-icon>
+          </ion-item>
+
+          <ion-item linea="none" *ngIf="phone_view">
+            <ion-input type="text" placeholder="Ingresa tu número telefónico" clearInput="true"
+              [(ngModel)]="userDat.whatsapp_1" style="text-transform:capitalize;"></ion-input>
+            <ion-icon slot="end" name="send-outline" class="check" (click)="saveInfo() ; phone_view = false"></ion-icon>
+          </ion-item>
+        </div>
+      </div>
+      <!-- Telefono -->
+
+    </ion-list>
+
+
+    <section class="divisor">
+      <span>
+        <ion-icon name="document-attach-outline"></ion-icon>
+      </span>
+    </section>
+
+    <ion-list lines="none" class="ion-list-light">
+
+      <!-- ZIP -->
+      <div class="detail_div">
+        <div class="light_box">
+          <ion-icon src="assets/point_orange.svg"></ion-icon>
+        </div>
+        <div class="inner_wrap">
+          <ion-item lines="none">
+            <ion-label (click)="zip_view = true">
+              Código Postal<br />
+              <small *ngIf="userDat.zip" style="text-transform:capitalize;">{{ userDat.zip }}</small>
+              <small *ngIf="!userDat.zip">Ingresa tu código postal</small>
+            </ion-label>
+            <ion-icon *ngIf="userDat.zip" slot="end" src="assets/success_icon.svg" class="check"></ion-icon>
+            <ion-icon *ngIf="userDat.zip == null" slot="end" src="assets/pencil_icon.svg" class="falt"
+              (click)="zip_view = true"></ion-icon>
+          </ion-item>
+
+          <ion-item linea="none" *ngIf="zip_view">
+            <ion-input type="text" placeholder="Ingresa tu código postal" clearInput="true" [(ngModel)]="userDat.zip"
+              style="text-transform:capitalize;"></ion-input>
+            <ion-icon slot="end" name="send-outline" class="check" (click)="saveInfo() ; zip_view = false"></ion-icon>
+          </ion-item>
+        </div>
+      </div>
+      <!-- ZIP -->
+
+      <!-- RFC -->
+      <div class="detail_div">
+        <div class="light_box">
+          <ion-icon src="assets/point_orange.svg"></ion-icon>
+        </div>
+        <div class="inner_wrap">
+          <ion-item lines="none">
+            <ion-label (click)="rfc_view = true">
+              RFC<br />
+              <small *ngIf="userDat.rfc" style="text-transform:capitalize;">{{ userDat.rfc }}</small>
+              <small *ngIf="!userDat.rfc">Ingresa tu RFC</small>
+            </ion-label>
+            <ion-icon *ngIf="userDat.rfc" slot="end" src="assets/success_icon.svg" class="check"></ion-icon>
+            <ion-icon *ngIf="userDat.rfc == null" slot="end" src="assets/pencil_icon.svg" class="falt"
+              (click)="rfc_view = true"></ion-icon>
+          </ion-item>
+
+          <ion-item linea="none" *ngIf="rfc_view">
+            <ion-input type="text" placeholder="Ingresa tu RFC" clearInput="true" [(ngModel)]="userDat.rfc"
+              style="text-transform:capitalize;"></ion-input>
+            <ion-icon slot="end" name="send-outline" class="check" (click)="saveInfo() ; rfc_view = false"></ion-icon>
+          </ion-item>
+        </div>
+      </div>
+      <!-- RFC -->
+
+      <!-- Regímen Fiscal -->
+      <div class="detail_div">
+        <div class="light_box">
+          <ion-icon src="assets/point_orange.svg"></ion-icon>
+        </div>
+        <div class="inner_wrap">
+          <ion-item lines="none">
+            <ion-label (click)="regimen_view = true">
+              Regimen Fiscal<br />
+              <small *ngIf="userDat.FiscalRegime" style="text-transform:capitalize;">{{ userDat.FiscalRegime }}</small>
+              <small *ngIf="!userDat.FiscalRegime">Ingresa tu Regimen Fiscal</small>
+            </ion-label>
+            <ion-icon *ngIf="userDat.FiscalRegime" slot="end" src="assets/success_icon.svg" class="check"></ion-icon>
+            <ion-icon *ngIf="userDat.FiscalRegime == null" slot="end" src="assets/pencil_icon.svg" class="falt"
+              (click)="regimen_view = true"></ion-icon>
+          </ion-item>
+
+          <ion-item linea="none" *ngIf="regimen_view">
+            <ion-select class="form-select" [(ngModel)]="userDat.FiscalRegime" [value]="userDat.FiscalRegime"
+              placeholder="Ingresa tu Regimen Fiscal" required="">
+              <ion-select-option value="">Selecciona el Régimen fiscal</ion-select-option>
+              <ion-select-option value="601">601 - General de Ley Personas Morales</ion-select-option>
+              <ion-select-option value="603">603 - Personas Morales con Fines no Lucrativos</ion-select-option>
+              <ion-select-option value="605">605 - Sueldos y Salarios e Ingresos Asimilados a
+                Salarios</ion-select-option>
+              <ion-select-option value="606">606 - Arrendamiento</ion-select-option>
+              <ion-select-option value="607">607 - Régimen de Enajenación o Adquisición de Bienes</ion-select-option>
+              <ion-select-option value="608">608 - Demás ingresos</ion-select-option>
+              <ion-select-option value="610">610 - Residentes en el Extranjero sin Establecimiento Permanente en
+                México</ion-select-option>
+              <ion-select-option value="611">611 - Ingresos por Dividendos (socios y accionistas)</ion-select-option>
+              <ion-select-option value="612">612 - Personas Físicas con Actividades Empresariales y
+                Profesionales</ion-select-option>
+              <ion-select-option value="614">614 - Ingresos por intereses</ion-select-option>
+              <ion-select-option value="615">615 - Régimen de los ingresos por obtención de premios</ion-select-option>
+              <ion-select-option value="616">616 - Sin obligaciones fiscales</ion-select-option>
+              <ion-select-option value="621">621 - Incorporación Fiscal</ion-select-option>
+              <ion-select-option value="625">625 - Régimen de las Actividades Empresariales con ingresos a través de
+                Plataformas Tecnológicas</ion-select-option>
+              <ion-select-option value="626">626 - Régimen Simplificado de Confianza</ion-select-option>
+              <ion-select-option value="628">628 - Hidrocarburos</ion-select-option>
+              <ion-select-option value="629">629 - De los Regímenes Fiscales Preferentes y de las Empresas
+                Multinacionales</ion-select-option>
+              <ion-select-option value="630">630 - Enajenación de acciones en bolsa de valores</ion-select-option>
+            </ion-select>
+            <ion-icon slot="end" name="send-outline" class="check"
+              (click)="saveInfo() ; regimen_view = false"></ion-icon>
+          </ion-item>
+        </div>
+      </div>
+      <!-- Regímen Fiscal -->
+
+    </ion-list>
+
+
+    <div class="white_div">
+      <div class="detail_div">
+        <ion-button (click)="presentAlert()">
+          <ion-icon name="qr-code-outline"></ion-icon>
+          &nbsp;
+          Cerrar sesión
+        </ion-button>
+      </div>
+    </div>
+  </section>
+
+</ion-content>
+
+
+<app-tabs-nav pageInit="profile"></app-tabs-nav>

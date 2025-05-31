@@ -1,0 +1,60 @@
+<ion-content [fullscreen]="true">
+
+  <section class="wrap_log">
+    <img src="assets/logo.png" alt="">
+
+    <h1>SOFTICKET</h1>
+  </section>
+
+  <!-- <section class="wrap_btns">
+    <ion-button color="primary">Inicia sesión</ion-button>
+  </section> -->
+
+  <section class="wrap_inputs">
+    <form  [formGroup]="authForm" (keyup.enter)="loginDat()">
+      <ion-list lines="none">
+        <ion-item>
+          <ion-icon src="assets/email_input.svg"></ion-icon> 
+          <ion-input mode="ios" clearInput name="email" formControlName="email"  type="mail" placeholder="Email ID"></ion-input>
+        </ion-item>
+        <ng-container *ngFor="let error of error_messages.email">
+          <div class="error-message" *ngIf="authForm.get('email')?.hasError(error.type) && (authForm.get('email')?.dirty || authForm.get('email')?.touched)">
+            {{error.message}}
+          </div>
+        </ng-container>
+
+        <ion-item>
+          <ion-icon src="assets/password_input.svg"></ion-icon>
+          <ion-input mode="ios" type="password" autocomplete="off" name="password" formControlName="password" clearInput placeholder="Password" required ></ion-input>
+        </ion-item>  
+        <ng-container *ngFor="let error of error_messages.password">
+          <div class="error-message" *ngIf="authForm.get('password')?.hasError(error.type) && (authForm.get('password')?.dirty || authForm.get('password')?.touched)">
+            {{error.message}}
+          </div>
+        </ng-container>
+      </ion-list>
+
+      <ion-list>
+        <section>
+          <ion-button color="primary" type="submit" 	(click)="loginDat()">Inicia sesión</ion-button>
+        </section>
+      </ion-list>
+    </form>
+  </section>
+
+  <section class="wrap_or_logs">
+    <div>
+      <span>OR</span>
+    </div>
+
+
+    <div class="btns_socials">
+      <img src="assets/fb_log.png" alt="facebook">
+      <img src="assets/google_log.png" alt="google">
+    </div>
+
+
+    <p (click)="goToSignup()">¿Todavía no estas registrado? <span>Crea una cuenta</span></p>
+  </section>
+
+</ion-content>

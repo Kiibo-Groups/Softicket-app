@@ -1,0 +1,52 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar> 
+    <ion-title>Facturas</ion-title>
+
+    <ion-buttons slot="end">
+      <ion-item>
+        <ion-avatar aria-hidden="true" slot="start">
+          <img alt="profile" src="assets/user_demo.png" />
+        </ion-avatar>
+      </ion-item>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+   
+  <section class="wrap_datatimer">
+    <ion-datetime  min="2024-10-00"
+    max="2028-01-00"
+    value="2024-10-25T15:03:46.789" [(ngModel)]="myDate"  (ionChange)="changeDate(this)"></ion-datetime>
+  </section>
+
+  <section class="wrap_list">
+    
+    <ion-list [inset]="true" *ngIf="Bills && Bills.length > 0">
+      <!-- Factura Recibida -->
+      <ion-item [button]="true" detail="false" *ngFor="let bill of Bills" (click)="presentActionSheet(bill)">
+        <div class="unread-indicator-wrapper" slot="start">
+          <svg width="10" height="11" viewBox="0 0 10 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M4.89642 3.35611C3.75416 3.35611 2.82486 4.28542 2.82486 5.42767C2.82486 6.56993 3.75417 7.49923 4.89642 7.49923C6.03868 7.49923 6.96798 6.56992 6.96798 5.42767C6.96798 4.28541 6.03867 3.35611 4.89642 3.35611ZM4.89642 0.53125C7.60064 0.53125 9.79284 2.72346 9.79284 5.42767C9.79284 8.13189 7.60063 10.3241 4.89642 10.3241C2.19221 10.3241 0 8.13188 0 5.42767C0 2.72346 2.19221 0.53125 4.89642 0.53125Z" fill="#00B383"/>
+          </svg>
+        </div>
+        <ion-label id="open-modal" expand="block">
+          <ion-text>{{bill.issuer_info.legal_name}}</ion-text><br />
+          <strong>{{bill.total | currency}}</strong>
+          <ion-note color="medium" class="ion-text-wrap">
+           {{bill.created_at}}
+          </ion-note>
+        </ion-label> 
+        <div class="metadata-end-wrapper" slot="end">
+          <ion-icon name="ellipsis-horizontal-outline"></ion-icon>
+        </div>
+      </ion-item> 
+    </ion-list>
+  </section>
+
+ 
+</ion-content>
+
+<ion-footer>
+  <app-tabs-nav pageInit="bills"></app-tabs-nav>
+</ion-footer>

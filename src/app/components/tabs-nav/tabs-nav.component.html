@@ -1,0 +1,42 @@
+
+<div class="menu_foot">
+  <ion-tabs>
+    <ion-tab-bar slot="bottom">
+      
+      <ion-tab-button (click)="GotoHome()">
+        <ion-icon [src]="PageInit == 'home' ? 'assets/home_active.svg' : 'assets/home.svg' "></ion-icon>
+        <svg [class]="PageInit == 'home' ? 'svg_active_shape' : 'svg_shape'" width="95" height="32" viewBox="0 0 95 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M0.586929 0.881836H0.586914V31.0799H0.586929V0.881836ZM94.0806 31.0799C78.6017 31.0799 71.6566 28.3757 66.2752 26.2804C62.8717 24.9552 60.0937 23.8735 56.1778 23.8735C52.3203 23.8735 49.935 24.9232 46.9851 26.2213C42.2057 28.3245 35.9444 31.0799 19.5384 31.0799H94.0806Z" fill="#ADD770"/>
+        </svg>
+      </ion-tab-button>
+
+      <ion-tab-button (click)="GotoBills()">
+        <ion-icon [src]="PageInit == 'bills' ? 'assets/bills_active.svg' : 'assets/bills.svg'"></ion-icon> 
+        <svg [class]="PageInit == 'bills' ? 'svg_active_shape' : 'svg_shape'" width="95" height="32" viewBox="0 0 95 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M0.586929 0.881836H0.586914V31.0799H0.586929V0.881836ZM94.0806 31.0799C78.6017 31.0799 71.6566 28.3757 66.2752 26.2804C62.8717 24.9552 60.0937 23.8735 56.1778 23.8735C52.3203 23.8735 49.935 24.9232 46.9851 26.2213C42.2057 28.3245 35.9444 31.0799 19.5384 31.0799H94.0806Z" fill="#ADD770"/>
+        </svg>
+      </ion-tab-button>
+
+      <ion-tab-button (click)="GotoQRCode()">
+        <ion-icon [src]="PageInit == 'qrcode' ? 'assets/qrcode_active.svg' : 'assets/qrcode.svg'"></ion-icon>
+        <svg [class]="PageInit == 'qrcode' ? 'svg_active_shape' : 'svg_shape'" width="95" height="32" viewBox="0 0 95 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M0.586929 0.881836H0.586914V31.0799H0.586929V0.881836ZM94.0806 31.0799C78.6017 31.0799 71.6566 28.3757 66.2752 26.2804C62.8717 24.9552 60.0937 23.8735 56.1778 23.8735C52.3203 23.8735 49.935 24.9232 46.9851 26.2213C42.2057 28.3245 35.9444 31.0799 19.5384 31.0799H94.0806Z" fill="#ADD770"/>
+        </svg>
+      </ion-tab-button>
+
+      <ion-tab-button (click)="GotoPromotions()">
+        <ion-icon [src]="PageInit == 'notifications' ? 'assets/notification_active.svg' : 'assets/notification.svg' "></ion-icon>
+        <svg [class]="PageInit == 'notifications' ? 'svg_active_shape' : 'svg_shape'" width="95" height="32" viewBox="0 0 95 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M0.586929 0.881836H0.586914V31.0799H0.586929V0.881836ZM94.0806 31.0799C78.6017 31.0799 71.6566 28.3757 66.2752 26.2804C62.8717 24.9552 60.0937 23.8735 56.1778 23.8735C52.3203 23.8735 49.935 24.9232 46.9851 26.2213C42.2057 28.3245 35.9444 31.0799 19.5384 31.0799H94.0806Z" fill="#ADD770"/>
+        </svg>
+      </ion-tab-button>
+      
+      <ion-tab-button (click)="GotoProfile()">
+        <ion-icon [src]="PageInit == 'profile' ? 'assets/wallet_active.svg' : 'assets/wallet.svg' "></ion-icon>
+        <svg [class]="PageInit == 'profile' ? 'svg_active_shape' : 'svg_shape'" width="95" height="32" viewBox="0 0 95 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M0.586929 0.881836H0.586914V31.0799H0.586929V0.881836ZM94.0806 31.0799C78.6017 31.0799 71.6566 28.3757 66.2752 26.2804C62.8717 24.9552 60.0937 23.8735 56.1778 23.8735C52.3203 23.8735 49.935 24.9232 46.9851 26.2213C42.2057 28.3245 35.9444 31.0799 19.5384 31.0799H94.0806Z" fill="#ADD770"/>
+        </svg>
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
+</div>

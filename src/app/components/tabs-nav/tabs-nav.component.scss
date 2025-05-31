@@ -1,0 +1,47 @@
+
+/**
+menu_foot
+*/
+
+.menu_foot {
+    position: fixed;
+    bottom: 15px;
+    left: 0;right: 0;
+    margin: auto;
+    width: 90%;
+    height:55px;
+    border: 1px solid #dadada;
+    border-radius: 15px;
+    -webkit-box-shadow: 0px 4px 14px -9px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 4px 14px -9px rgba(0,0,0,0.75);
+    box-shadow: 0px 4px 14px -9px rgba(0,0,0,0.75);
+    z-index: 1000;
+  
+    ion-tabs {   
+  
+      ion-tab-bar {
+        border-radius: 15px;
+     
+        
+        ion-tab-button {
+
+          svg {
+            position: absolute;
+            left: -15px;
+            width: 60px !important;
+            bottom: 5px;
+          }
+
+          svg.svg_active_shape {
+            display: block;
+          }
+
+          svg.svg_shape {
+            display: none;
+          }
+          
+        }
+      }
+    }
+  }
+  
